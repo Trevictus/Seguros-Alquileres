@@ -1,9 +1,9 @@
 package org.example.view
 
-class Consola {
-    package view
+import controller.IActividadRepositorio
 
-    class Consola {
+
+class Consola(val repositorio: IActividadRepositorio) {
 
         fun mostrarMenuAdmin(){
             println("1. Usuarios\n" +
@@ -34,28 +34,26 @@ class Consola {
                         }
                         2 ->{
                             println("1. Contratar Seguro\n" +
-                                    "2. Editar Seguro (ingresar ID)\n" +
-                                    "3. Eliminar Seguro (ingresar ID)\n" +
-                                    "4. Listar Seguros")
+                                    "2. Eliminar Seguro (ingresar ID)\n" +
+                                    "3. Listar Seguros")
                             val opcionSegurosAdmin = readln().toInt()
                             when(opcionSegurosAdmin){
                                 1 -> {
                                     println("1. Hogar\n" +
-                                            "2. Coche\n" +
-                                            "3. Moto")
+                                            "2. Auto\n" +
+                                            "3. Vida")
                                     val opcionTipoSeguro = readln().toInt()
                                     when(opcionTipoSeguro){
                                     1 -> contratarSeguroHogar()
-                                    2 -> contratarSeguroCoche()
-                                    3 -> contratarSeguroMoto()
+                                    2 -> contratarSeguroAuto()
+                                    3 -> contratarSeguroVida()
                                         else -> {
                                             println("ERROR. Opción inválida.")
                                         }
                                     }
                                 }
-                            2 -> editarSeguro()
-                            3 -> eliminarSeguro()
-                            4 -> listarSeguros()
+                            2 -> eliminarSeguro()
+                            3 -> listarSeguros()
                             }
                         }
                         3 -> break
@@ -69,4 +67,3 @@ class Consola {
             }
         }
     }
-}
