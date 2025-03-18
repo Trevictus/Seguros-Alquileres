@@ -1,4 +1,4 @@
 package org.example.models
 
-class Admin {
+class SeguroHogar {
 }

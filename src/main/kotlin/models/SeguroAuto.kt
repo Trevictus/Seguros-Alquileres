@@ -1,4 +1,4 @@
 package org.example.models
 
-class Gestion {
+class SeguroAuto {
 }
